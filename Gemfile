@@ -114,7 +114,7 @@ gem "tailwindcss-rails", "~> 2.0"
 gem "debug", ">= 1.0.0"
 
 # Handles the queuing for jobs
-gem "sidekiq"
+gem "sidekiq", "~> 6.4.1"
 
 # AWS for uploading to S3
 gem "aws-sdk-s3"

@@ -415,7 +415,7 @@ DEPENDENCIES
   ruby_jard
   sass-rails (>= 6)
   selenium-webdriver
-  sidekiq
+  sidekiq (~> 6.4.1)
   sorted_set
   sprockets-rails
   sqlite3 (~> 1.4)
