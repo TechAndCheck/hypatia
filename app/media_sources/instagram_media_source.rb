@@ -80,6 +80,7 @@ class InstagramMediaSource < MediaSource
         post.instance_variable_set("@aws_video_preview_key", aws_upload_wrapper.object.key)
       end
 
+
       post
     end
   end

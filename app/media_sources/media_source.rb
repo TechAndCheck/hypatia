@@ -5,7 +5,6 @@ class MediaSource
   @@logger.level = Logger::DEBUG
   @@logger.datetime_format = "%Y-%m-%d %H:%M:%S"
 
-
   # Enqueue a job to scrape a URL depending on the site this is set for.
   #
   # @!scope class
@@ -41,7 +40,6 @@ class MediaSource
 
     object
   end
-
 
   def self.create_aws_key_functions_for_posts(posts)
     posts.map do |post|
