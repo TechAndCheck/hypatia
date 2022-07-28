@@ -59,6 +59,14 @@ class InstagramMediaSource < MediaSource
     posts.map do |post|
       @@logger.debug "Beginning uploading of files to S3 bucket #{Figaro.env.AWS_S3_BUCKET_NAME}"
 
+      # Upload post screenshot to s3
+      if post.screenshot_file.present?
+        @@logger.debug "Uploading post screenshot #{post.screenshot_file}"
+        aws_upload_wrapper = AwsObjectUploadFileWrapper.new(post.screenshot_file)
+        aws_upload_wrapper.upload_file
+        post.instance_variable_set("@aws_screenshot_key", aws_upload_wrapper.object.key)
+      end
+
       # Let's see if it's a video or images, and upload them
       if post.image_file_names.present?
         aws_image_keys = post.image_file_names.map do |image_file_name|

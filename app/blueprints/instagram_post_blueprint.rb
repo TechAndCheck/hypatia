@@ -44,6 +44,13 @@ class InstagramPostBlueprint < Blueprinter::Base
     to_return
   end
 
+  field :screenshot_file do |post|
+    if post.aws_video_preview_key.blank?
+      file = File.open(post.screenshot_file).read
+      Base64.encode64(file)
+    end
+  end
+
   field :aws_video_key do |post|
     post.aws_video_key()
   end

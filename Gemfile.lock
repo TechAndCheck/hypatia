@@ -1,13 +1,12 @@
 GIT
   remote: https://github.com/TechAndCheck/YoutubeArchiver
-  revision: e1a594e9a6dcc7cfed3acdaabf55c92e9c3a6ab2
+  revision: 0b5ed34f5b5e19c85ed78d28f4d1967c5259e4b8
   specs:
     youtubearchiver (0.1.0)
 
 GIT
   remote: https://github.com/TechAndCheck/forki
-  revision: d79fb1e989694be87f266050abd82d80599b4453
-  branch: selenium-fixes
+  revision: 0744907ee2a98e8ff815ad288d58ba203365fe3e
   specs:
     forki (0.1.0)
       apparition
@@ -18,7 +17,7 @@ GIT
 
 GIT
   remote: https://github.com/cguess/zorki
-  revision: 7de5cd60f6bc5375d578f7191cb9bd099184d4ac
+  revision: 69eb23f1621c96f0fdd5ca1c4160a555d94c072b
   specs:
     zorki (0.1.0)
       apparition
@@ -208,7 +207,7 @@ GEM
       racc (~> 1.4)
     nokogiri (1.13.6-x86_64-linux)
       racc (~> 1.4)
-    oj (3.13.14)
+    oj (3.13.17)
     parallel (1.22.1)
     parser (3.1.2.0)
       ast (~> 2.4.1)
@@ -312,8 +311,8 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
-    selenium-devtools (0.102.0)
-      websocket (~> 1.0)
+    selenium-devtools (0.103.1)
+      selenium-webdriver (~> 4.2)
     selenium-webdriver (4.2.1)
       childprocess (>= 0.5, < 5.0)
       rexml (~> 3.2, >= 3.2.5)
