@@ -14,6 +14,8 @@ class PostBlueprint < Blueprinter::Base
       to_return = YoutubeVideoBlueprint.render_as_hash(post)
     when "Mosquito::Tweet"
       to_return = TwitterPostBlueprint.render_as_hash(post)
+    when "Morris::Post"
+      to_return = TikTokPostBlueprint.render_as_hash(post)
     else
       raise "Unsupported class for a post passed into PostBlueprint"
     end

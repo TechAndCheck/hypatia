@@ -15,6 +15,9 @@ class MediaSourceTest < ActiveSupport::TestCase
 
     url = "https://mobile.twitter.com/MichelCaballero/status/1637639770347040769"
     assert_equal TwitterMediaSource, MediaSource.model_for_url(url)
+
+    url = "https://www.tiktok.com/@guess/video/7091753416032128299"
+    assert_equal TikTokMediaSource, MediaSource.model_for_url(url)
   end
 
   test "HostError has everything properly" do

@@ -103,7 +103,6 @@ class InstagramMediaSource < MediaSource
         post.instance_variable_set("@aws_video_preview_key", aws_upload_wrapper.object.key)
       end
 
-
       post
     end
   end
@@ -126,7 +125,8 @@ private
   # @return [Boolean] if the string validates or not
   def self.validate_instagram_post_url(url)
     self.valid_host_name.each do |host_name|
-      return true if /#{host_name}\/((p)|(reel)|(tv))\/[\w]+/.match?(url)
+      return true if /#{host_name}\/(?:p|reel|tv)\/([\w]+)/.match?(url)
+      return true if /#{host_name}\/[\w]+\/(?:p|reel|tv)\/([\w]+)/.match?(url)
     end
     raise InvalidInstagramPostUrlError, "Instagram url #{url} does not have the standard url format"
   end
@@ -139,10 +139,15 @@ private
   # @params url [String] a url to extract an id from
   # @return [String] the id from the url or [Nil]
   def self.extract_instagram_id_from_url(url)
-    uri = URI(url)
-    splits = uri.path.split("/")
-    raise InstagramMediaSource::InvalidInstagramPostUrlError if splits.empty?
-    splits[2]
+    # NOTE: FIGURE OUT CAPTURE
+    found_matches = /https:\/\/[www.]*instagram.com\/(?:p|reel|tv)\/([\w]+)/.match(url)
+    return found_matches[1] unless found_matches.nil?
+
+    found_matches = /https:\/\/[www.]*instagram.com\/[\w]+\/(?:p|reel|tv)\/([\w]+)/.match(url)
+    return found_matches[1] unless found_matches.nil?
+
+    # If neither worked, raise an error
+    raise InvalidInstagramPostUrlError, "Instagram url #{url} does not have the standard url format"
   end
 end
 

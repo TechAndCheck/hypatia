@@ -3,8 +3,8 @@ require "test_helper"
 class InstagramMediaSourceTest < ActiveSupport::TestCase
   def setup; end
 
-  @@instagram_video_posts ||= InstagramMediaSource.extract(Scrape.create({ url: "https://www.instagram.com/p/Cd0Uhc0hKPB/" }))
-  @@instagram_image_posts ||= InstagramMediaSource.extract(Scrape.create({ url: "https://www.instagram.com/p/CZu6b08OB0Q/" }))
+  # @@instagram_video_posts ||= InstagramMediaSource.extract(Scrape.create({ url: "https://www.instagram.com/p/Cd0Uhc0hKPB/" }))
+  # @@instagram_image_posts ||= InstagramMediaSource.extract(Scrape.create({ url: "https://www.instagram.com/p/CZu6b08OB0Q/" }))
 
   test "can send error via slack notification" do
     assert_nothing_raised do
@@ -27,6 +27,20 @@ class InstagramMediaSourceTest < ActiveSupport::TestCase
     assert_nothing_raised do
       assert_not_nil(@@instagram_image_posts.first)
     end
+  end
+
+  test "id can be pulled from variations of the url" do
+    assert InstagramMediaSource.validate_instagram_post_url("https://www.instagram.com/9thstreetjournal/p/C4qqX1LvBbU/")
+    assert InstagramMediaSource.validate_instagram_post_url("https://www.instagram.com/p/C4qqX1LvBbU/")
+    assert InstagramMediaSource.validate_instagram_post_url("https://www.instagram.com/reel/CvzTrIagwK2/")
+    assert InstagramMediaSource.validate_instagram_post_url("https://www.instagram.com/tv/CvzTrIagwK2/")
+
+    assert_equal "C1nPLjNrxct", InstagramMediaSource.extract_instagram_id_from_url("https://www.instagram.com/p/C1nPLjNrxct/")
+    assert_equal "CvzTrIagwK2", InstagramMediaSource.extract_instagram_id_from_url("https://www.instagram.com/reel/CvzTrIagwK2/")
+    assert_equal "CvzTrIagwK2", InstagramMediaSource.extract_instagram_id_from_url("https://www.instagram.com/tv/CvzTrIagwK2/")
+    assert_equal "C4qqX1LvBbU", InstagramMediaSource.extract_instagram_id_from_url("https://www.instagram.com/9thstreetjournal/p/C4qqX1LvBbU/")
+    assert_equal "C4qqX1LvBbU", InstagramMediaSource.extract_instagram_id_from_url("https://www.instagram.com/9thstreetjournal/reel/C4qqX1LvBbU/")
+    assert_equal "C4qqX1LvBbU", InstagramMediaSource.extract_instagram_id_from_url("https://www.instagram.com/9thstreetjournal/tv/C4qqX1LvBbU/")
   end
 
   test "extracted video has screenshot" do
