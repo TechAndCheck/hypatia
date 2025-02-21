@@ -21,29 +21,15 @@ GIT
 
 GIT
   remote: https://github.com/TechAndCheck/zorki
-  revision: accfd1d1d4fd8ca0671629c9b2fa8b5dc824e04b
+  revision: 2e11143465f611ba11f1f4e58e239c350cd6eb7e
   specs:
-    zorki (0.2.8)
+    zorki (0.2.9)
       apparition
       capybara
       oj
       selenium-devtools
       selenium-webdriver (~> 4.25.0)
       typhoeus
-
-GIT
-  remote: https://github.com/cguess/birdsong
-  revision: 39e61733942879b77bdae93928bbf096efa40d9d
-  branch: master
-  specs:
-    birdsong (0.2.15)
-      capybara (~> 3.40)
-      curb (~> 1.0, >= 1.0.5)
-      oauth (~> 0.5.6)
-      oj (~> 3.16, >= 3.16.3)
-      selenium-devtools
-      selenium-webdriver (~> 4.21, >= 4.21.1)
-      typhoeus (~> 1.4.0)
 
 GIT
   remote: https://github.com/techandcheck/morris
@@ -58,6 +44,18 @@ GIT
       selenium-webdriver
       terrapin
       typhoeus
+
+PATH
+  remote: /Users/christopher/Repositories/birdsong
+  specs:
+    birdsong (0.2.15)
+      capybara (~> 3.40)
+      curb (~> 1.0, >= 1.0.5)
+      oauth (~> 0.5.6)
+      oj (~> 3.16, >= 3.16.3)
+      selenium-devtools
+      selenium-webdriver (~> 4.21, >= 4.21.1)
+      typhoeus (~> 1.4.0)
 
 GEM
   remote: https://rubygems.org/
@@ -183,7 +181,7 @@ GEM
     crass (1.0.6)
     cssbundling-rails (1.4.1)
       railties (>= 6.0.0)
-    curb (1.0.6)
+    curb (1.0.9)
     date (3.4.1)
     debug (1.9.2)
       irb (~> 1.10)
@@ -236,7 +234,7 @@ GEM
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
     localhost (1.3.1)
-    logger (1.6.4)
+    logger (1.6.6)
     loofah (2.22.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
@@ -265,11 +263,11 @@ GEM
     net-smtp (0.5.0)
       net-protocol
     nio4r (2.7.3)
-    nokogiri (1.18.1-arm64-darwin)
+    nokogiri (1.18.3-arm64-darwin)
       racc (~> 1.4)
-    nokogiri (1.18.1-x86_64-darwin)
+    nokogiri (1.18.3-x86_64-darwin)
       racc (~> 1.4)
-    nokogiri (1.18.1-x86_64-linux-gnu)
+    nokogiri (1.18.3-x86_64-linux-gnu)
       racc (~> 1.4)
     oauth (0.5.14)
     oj (3.16.9)
@@ -293,7 +291,7 @@ GEM
     puma (5.6.8)
       nio4r (~> 2.0)
     racc (1.8.1)
-    rack (2.2.10)
+    rack (2.2.11)
     rack-mini-profiler (2.3.4)
       rack (>= 1.2.0)
     rack-session (1.0.2)
@@ -349,7 +347,7 @@ GEM
     regexp_parser (2.10.0)
     reline (0.5.10)
       io-console (~> 0.5)
-    rexml (3.4.0)
+    rexml (3.4.1)
     rubocop (1.66.1)
       json (~> 2.3)
       language_server-protocol (>= 3.17.0)
@@ -395,7 +393,7 @@ GEM
       byebug (>= 9.1, < 12.0)
       pry (~> 0.13.0)
       tty-screen (~> 0.8.1)
-    rubyzip (2.3.2)
+    rubyzip (2.4.1)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
     sassc (2.4.0)
@@ -407,7 +405,7 @@ GEM
       sprockets-rails
       tilt
     securerandom (0.4.0)
-    selenium-devtools (0.131.0)
+    selenium-devtools (0.133.0)
       selenium-webdriver (~> 4.2)
     selenium-webdriver (4.25.0)
       base64 (~> 0.2)
@@ -474,7 +472,8 @@ GEM
       railties (>= 6.0.0)
     webrick (1.9.1)
     websocket (1.2.11)
-    websocket-driver (0.7.6)
+    websocket-driver (0.7.7)
+      base64
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
     xdg (2.2.5)
@@ -541,7 +540,7 @@ DEPENDENCIES
   web-console (>= 4.1.0)
   yard
   youtubearchiver!
-  zorki (= 0.2.8)!
+  zorki (= 0.2.9)!
 
 RUBY VERSION
    ruby 3.1.6p260
