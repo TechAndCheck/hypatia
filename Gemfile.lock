@@ -8,14 +8,15 @@ GIT
 
 GIT
   remote: https://github.com/TechAndCheck/forki
-  revision: 437bd6fac01d7289faa11094cad1f3751a89fd15
+  revision: a0223f54116d68348650378ba191751f41c36528
   branch: main
   specs:
-    forki (0.2.39)
+    forki (0.2.40)
       apparition
       capybara
       oj
       selenium-webdriver
+      semantic_logger
       typhoeus
       zorki
 
@@ -265,11 +266,11 @@ GEM
     net-smtp (0.5.0)
       net-protocol
     nio4r (2.7.3)
-    nokogiri (1.18.3-arm64-darwin)
+    nokogiri (1.18.5-arm64-darwin)
       racc (~> 1.4)
-    nokogiri (1.18.3-x86_64-darwin)
+    nokogiri (1.18.5-x86_64-darwin)
       racc (~> 1.4)
-    nokogiri (1.18.3-x86_64-linux-gnu)
+    nokogiri (1.18.5-x86_64-linux-gnu)
       racc (~> 1.4)
     oauth (0.5.14)
     oj (3.16.10)
@@ -293,7 +294,7 @@ GEM
     puma (5.6.8)
       nio4r (~> 2.0)
     racc (1.8.1)
-    rack (2.2.11)
+    rack (2.2.13)
     rack-mini-profiler (2.3.4)
       rack (>= 1.2.0)
     rack-session (1.0.2)
@@ -415,6 +416,8 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
+    semantic_logger (4.16.1)
+      concurrent-ruby (~> 1.0)
     set (1.1.0)
     sidekiq (6.5.12)
       connection_pool (>= 2.2.5, < 3)
