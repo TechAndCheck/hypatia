@@ -22,19 +22,19 @@ GIT
 
 GIT
   remote: https://github.com/TechAndCheck/zorki
-  revision: 43463746c69ba083f53b98bb00a839a95cf39fe6
+  revision: 46b593574ca6d2e590969dd327d8ac023a58fb81
   specs:
     zorki (0.2.11)
       apparition
       capybara
       oj
       selenium-devtools
-      selenium-webdriver (~> 4.25.0)
+      selenium-webdriver (~> 4.32.0)
       typhoeus
 
 GIT
   remote: https://github.com/cguess/birdsong
-  revision: a3a1e4ef653a82b3ead49b5d0787a0d223938d21
+  revision: 75ac41b3643074080786d559856ae183b59f4523
   branch: master
   specs:
     birdsong (0.2.16)
@@ -43,7 +43,7 @@ GIT
       oauth (~> 0.5.6)
       oj (~> 3.16, >= 3.16.3)
       selenium-devtools
-      selenium-webdriver (~> 4.21, >= 4.21.1)
+      selenium-webdriver (~> 4.31, >= 4.31.0)
       typhoeus (~> 1.4.0)
 
 GIT
@@ -266,11 +266,11 @@ GEM
     net-smtp (0.5.0)
       net-protocol
     nio4r (2.7.3)
-    nokogiri (1.18.7-arm64-darwin)
+    nokogiri (1.18.8-arm64-darwin)
       racc (~> 1.4)
-    nokogiri (1.18.7-x86_64-darwin)
+    nokogiri (1.18.8-x86_64-darwin)
       racc (~> 1.4)
-    nokogiri (1.18.7-x86_64-linux-gnu)
+    nokogiri (1.18.8-x86_64-linux-gnu)
       racc (~> 1.4)
     oauth (0.5.14)
     oj (3.16.10)
@@ -290,11 +290,11 @@ GEM
       pry (>= 0.13, < 0.15)
     psych (5.1.2)
       stringio
-    public_suffix (6.0.1)
+    public_suffix (6.0.2)
     puma (5.6.8)
       nio4r (~> 2.0)
     racc (1.8.1)
-    rack (2.2.13)
+    rack (2.2.15)
     rack-mini-profiler (2.3.4)
       rack (>= 1.2.0)
     rack-session (1.0.2)
@@ -408,9 +408,9 @@ GEM
       sprockets-rails
       tilt
     securerandom (0.4.0)
-    selenium-devtools (0.135.0)
+    selenium-devtools (0.136.0)
       selenium-webdriver (~> 4.2)
-    selenium-webdriver (4.25.0)
+    selenium-webdriver (4.32.0)
       base64 (~> 0.2)
       logger (~> 1.4)
       rexml (~> 3.2, >= 3.2.5)
@@ -530,7 +530,7 @@ DEPENDENCIES
   ruby_jard
   sass-rails (>= 6)
   selenium-devtools
-  selenium-webdriver (= 4.25.0)
+  selenium-webdriver (>= 4.32.0)
   sidekiq (~> 6.5.5)
   slack-ruby-client
   sorted_set
