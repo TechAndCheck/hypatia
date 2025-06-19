@@ -8,7 +8,7 @@ GIT
 
 GIT
   remote: https://github.com/TechAndCheck/forki
-  revision: ea1390362d310f5a9fff7669f30b37039166a25e
+  revision: f0bac40c74cbbf33db579bb8ac3027347ba3cc00
   branch: main
   specs:
     forki (0.2.40)
